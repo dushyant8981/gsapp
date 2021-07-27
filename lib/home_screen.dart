@@ -161,7 +161,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
                 Center(
-                  child: Text(userProvider.GetPhoneNumber()),
+                  //child: Text(userProvider.GetPhoneNumber()),
                 ),
 
           ]),

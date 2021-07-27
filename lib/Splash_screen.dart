@@ -21,7 +21,7 @@ class splashscreen extends StatelessWidget {
           splash:Image(
             height:1500,
             image:AssetImage('assets/logo/gs_logo1.jpg'),),
-          nextScreen: option(),
+          nextScreen: Authenticate().handleAuth(),
           splashTransition: SplashTransition.fadeTransition,
           //pageTransitionType: PageTrasitionType.scale,
           backgroundColor: Colors.white,
