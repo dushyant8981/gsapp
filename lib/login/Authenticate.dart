@@ -5,7 +5,6 @@ import 'package:grocery_app/login/Option.dart';
 import 'package:grocery_app/model/user.dart';
 import 'package:provider/provider.dart';
 class Authenticate {
-  late UserProvider userProvider;
   handleAuth()
   {
     return StreamBuilder(
