@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:provider/provider.dart';
+
+import 'model/user.dart';
 
 class HomeScreen extends StatelessWidget {
+
+
+  late UserProvider userProvider;
+
   final List<String> imgList = [
     'assets/slide1.jpg'
         'assets/slide2.jpg'
@@ -10,6 +17,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    userProvider = Provider.of<UserProvider>(context);
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -151,7 +159,11 @@ class HomeScreen extends StatelessWidget {
                 autoPlayAnimationDuration: Duration(milliseconds: 400),
                 viewportFraction: 0.8,
               ),
-            )
+            ),
+                Center(
+                  child: Text(userProvider.GetPhoneNumber()),
+                ),
+
           ]),
         ),
       ),

@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/home_screen.dart';
+import 'package:grocery_app/model/user.dart';
+import 'package:provider/provider.dart';
 class otpscreen extends StatefulWidget {
   final String Num;
   otpscreen({required this.Num});
@@ -14,7 +16,7 @@ class _otpscreenState extends State<otpscreen> {
 
   FirebaseAuth fauth = FirebaseAuth.instance;
   late String verificationId;
-
+  late UserProvider userProvider;
   final _otpController = TextEditingController();
 
   //init
@@ -56,6 +58,7 @@ class _otpscreenState extends State<otpscreen> {
 
   @override
   Widget build(BuildContext context) {
+     userProvider = Provider.of<UserProvider>(context);
     return Scaffold(
       body: Center(
         child: Column(
@@ -89,6 +92,8 @@ class _otpscreenState extends State<otpscreen> {
                         smsCode: _otpController.text));
 
                     if (cred.user != null) {
+                      userProvider.setphonenumber(widget.Num);
+                      userProvider.setstutus("logged in");
                       Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(builder: (context) => HomeScreen()),

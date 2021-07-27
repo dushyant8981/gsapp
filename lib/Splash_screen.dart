@@ -1,6 +1,10 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:grocery_app/login/Authenticate.dart';
 import 'package:grocery_app/login/Option.dart';
+import 'package:grocery_app/model/user.dart';
+import 'package:provider/provider.dart';
 
 import 'home_screen.dart';
 
@@ -26,4 +30,6 @@ class splashscreen extends StatelessWidget {
     );
   }
 }
+
+
 
